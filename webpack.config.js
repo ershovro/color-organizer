@@ -3,7 +3,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 module.exports = {
    mode: NODE_ENV,
    context: __dirname + '/src',
-   entry: './App.js',
+   entry: './index.js',
    output: {
       path: __dirname + '/dist/assets',
       publicPath: '/assets',

@@ -17,7 +17,6 @@ const StarRating = ({starsSelected = 0, totalStars = 5, onRate = f => f}) => (
       </div>
       <p className="starRating__info">{starsSelected} of {totalStars} stars</p>
    </div>
-   
 )
 
 StarRating.propTypes = {

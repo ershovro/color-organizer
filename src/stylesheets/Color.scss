@@ -1,0 +1,32 @@
+@import "globals";
+
+.color {
+  @include shadow;
+  
+  height: 235px;
+  
+  border: 2px solid $light-grey;
+  border-bottom-color: darken($light-grey, 40%);
+  border-right-color: darken($light-grey, 40%);
+  
+  margin: 1em;
+  padding: 0;
+  
+ 
+  display: inline-flex;
+  flex-direction: column;
+  
+  position: relative;
+}
+
+.color__removeButton {
+   position: absolute;
+   top: .5em;
+   right: .5em;
+   
+   
+}
+
+.color__canvas {
+  height: 100px;
+}

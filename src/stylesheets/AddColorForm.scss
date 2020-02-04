@@ -1,0 +1,26 @@
+.colorForm {
+   width: 98%;
+   display: flex;
+}
+
+.colorForm__textInput {
+   flex-grow: 1;
+}
+
+.colorForm__colorInput {
+   padding: 0;
+   height: +2em;
+}
+
+.colorForm__textInput, .colorForm__colorInput, .colorForm__Button {
+    margin: .5em;
+    padding: .25em;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.colorForm__Button {
+    background-color: green;
+    color: white;
+    border: none;
+}

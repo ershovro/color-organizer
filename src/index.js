@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import Color from './components/ui/Color';
+import AddColorForm from './components/ui/AddColorForm';
 
 ReactDom.render(
-   <Color starsSelected={5}/>,
+   <AddColorForm/>,
    document.getElementById('root')
 );

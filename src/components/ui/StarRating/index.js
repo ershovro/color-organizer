@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import Star from '../Star'
-import './StarRating.css'
+import '../../../stylesheets/StarRating.scss'
 
 
 const StarRating = ({starsSelected = 0, totalStars = 5, onRate = f => f}) => (

@@ -4,36 +4,43 @@ import { withRouter } from 'react-router'
 import StarRating from '../StarRating'
 //import TimeAgo from './TimeAgo'
 import {FaTrash} from 'react-icons/fa'
-import './Color.css'
+import '../../../stylesheets/Color.scss'
 
 class Color extends React.Component {
 
-    render() {
-        const { id, title, color, rating, timestamp, onRemove, onRate, history } = this.props
-        return (
-            <section className="color" style={this.style}>
-                <h1 ref="title"
-                    onClick={() => history.push(`/${id}`)}>{title}</h1>
-                <button onClick={onRemove}>
-                   <FaTrash />
-                </button>
-                <div className="color"
-                     onClick={() => history.push(`/${id}`)}
-                     style={{ backgroundColor: color }}>
-                </div>
-               
-                <div>
-                    <StarRating starsSelected={rating} onRate={onRate}/>
-                </div>
-            </section>
-        )
-    }
+   render() {
+      const { id, title, color, rating, timestamp, onRemove, onRate, history } = this.props
+
+      return (
+          <section className="color" style={this.style}>
+             <h1 
+                ref="title"
+                className="color__title"
+                onClick={() => history.push(`/${id}`)}>
+                {title}
+             </h1>
+             <button 
+                className="color__removeButton"
+                onClick={onRemove}>
+                <FaTrash/>
+             </button>
+             <div
+                className="color__canvas"
+                onClick={() => history.push(`/${id}`)}
+                style={{ backgroundColor: color }}>
+             </div>
+             <div className="color__starRating">
+                 <StarRating starsSelected={rating} onRate={onRate}/>
+             </div>
+          </section>
+      );
+   }
 
 }
 
 Color.propTypes = {
-    title: PropTypes.string,//.isRequired,
-    color: PropTypes.string,//.isRequired,
+    title: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
     rating: PropTypes.number,
     onRemove: PropTypes.func,
     onRate: PropTypes.func

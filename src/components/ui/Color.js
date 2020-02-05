@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
-import StarRating from '../StarRating'
+import StarRating from './StarRating'
 //import TimeAgo from './TimeAgo'
 import {FaTrash} from 'react-icons/fa'
-import '../../../stylesheets/Color.scss'
+import '../../stylesheets/Color.scss'
 
 class Color extends React.Component {
 

@@ -2,18 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 import StarRating from './StarRating'
-//import TimeAgo from './TimeAgo'
+import TimeAgo from './TimeAgo'
 import {FaTrash} from 'react-icons/fa'
 import '../../stylesheets/Color.scss'
 
 class Color extends React.Component {
 
    render() {
-      const { id, title, color, rating, timestamp, onRemove, onRate, history } = this.props
+      const { id, title, color, rating, timeStamp, onRemove, onRate, history } = this.props;
 
       return (
           <section className="color" style={this.style}>
-             <h1 
+             <h1
                 ref="title"
                 className="color__title"
                 onClick={() => history.push(`/${id}`)}>
@@ -24,6 +24,9 @@ class Color extends React.Component {
                 onClick={onRemove}>
                 <FaTrash/>
              </button>
+             <div className="color__timestamp">
+                <TimeAgo timeStamp={timeStamp}/>
+             </div>
              <div
                 className="color__canvas"
                 onClick={() => history.push(`/${id}`)}

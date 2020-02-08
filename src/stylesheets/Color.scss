@@ -27,6 +27,14 @@
    
 }
 
+.color__timestamp {
+  position: absolute;
+  bottom: .5em;
+  right: .5em;
+  font-family: monospace;
+  color: darken($light-grey, 40%);
+}
+
 .color__canvas {
   height: 100px;
 }

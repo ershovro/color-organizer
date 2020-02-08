@@ -1,6 +1,6 @@
 import { v4 } from 'uuid'; 
 
-const addColor = (title, color) =>
+export const addColor = (title, color) =>
     ({
         type: "ADD_COLOR",
         id: v4(),
@@ -9,20 +9,20 @@ const addColor = (title, color) =>
         timestamp: new Date().toString()
     })
 
-const removeColor = id =>
+export const removeColor = id =>
     ({
         type: "REMOVE_COLOR",
         id
     })
 
-const rateColor = (id, rating) =>
+export const rateColor = (id, rating) =>
     ({
         type: "RATE_COLOR",
         id,
         rating
     })
 
-const sortColors = sortedBy =>
+export const sortColors = sortedBy =>
     (sortedBy === "rating") ?
         ({
             type: "SORT_COLORS",

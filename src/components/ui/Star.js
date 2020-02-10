@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import '../../stylesheets/Star.scss'
 
-const Star = ({selected = false, onClick = f => f}) => (
+const Star = ({selected = false, onClick = f => f, className = ''}) => (
    <div
-      className={selected ? 'star star_selected' : 'star'}
+      className={`star ${selected ? 'star_selected' : ''} ${className}`}
       onClick={onClick}>
    </div>
    
@@ -12,7 +12,8 @@ const Star = ({selected = false, onClick = f => f}) => (
 
 Star.propTypes = {
    selected: PropTypes.bool,
-   onClick: PropTypes.func
+   onClick: PropTypes.func,
+   className: PropTypes.string
 }
 
 export default Star;

@@ -10,6 +10,7 @@ const StarRating = ({starsSelected = 0, totalStars = 5, onRate = f => f}) => (
          {[...Array(totalStars)].map( (_, i) => 
             <Star 
                key={i}
+               className="starRating__star_margin"
                selected={i < starsSelected}
                onClick={ () => onRate(i + 1) }
             />

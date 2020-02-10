@@ -10,7 +10,7 @@ export const NewColor = connect(
     null,
     dispatch =>
         ({
-            onNewColor(title, color) {
+            oneNewColor(title, color) {
                 dispatch(addColor(title, color))
             }
         })

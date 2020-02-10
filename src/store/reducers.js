@@ -7,7 +7,7 @@ export const color = (state = {}, action={ type: null }) => {
                 id: action.id,
                 title: action.title,
                 color: action.color,
-                timestamp: action.timestamp,
+                timeStamp: action.timeStamp,
                 rating: 0
             }
         case C.RATE_COLOR:

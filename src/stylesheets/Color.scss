@@ -3,6 +3,7 @@
 .color {
   @include shadow;
   
+  width: 200px;
   height: 235px;
   
   border: 2px solid $light-grey;
@@ -23,8 +24,6 @@
    position: absolute;
    top: .5em;
    right: .5em;
-   
-   
 }
 
 .color__timestamp {
@@ -37,4 +36,9 @@
 
 .color__canvas {
   height: 100px;
+}
+
+.color__starRating {
+   display: flex;
+   justify-content: center;
 }

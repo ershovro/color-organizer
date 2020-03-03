@@ -1,0 +1,7 @@
+
+
+http://localhost:8080/ colorId
+
+http://localhost:8080/ default
+http://localhost:8080/sort/title
+http://localhost:8080/sort/rating

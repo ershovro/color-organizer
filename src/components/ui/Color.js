@@ -51,8 +51,8 @@ Color.propTypes = {
 
 Color.defaultProps = {
     rating: 0,
-    onRemove: f=>f,
-    onRate: f=>f
+    onRemove: f => f,
+    onRate: f => f
 }
 
-export default Color//withRouter(Color)
+export default withRouter(Color);

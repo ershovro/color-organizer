@@ -1,10 +1,10 @@
-import { connect } from 'react-redux'
-import ColorList from './ui/ColorList'
-import ColorDetails from './ui/ColorDetails'
-import AddColorForm from './ui/AddColorForm'
-import { addColor, rateColor, removeColor } from '../actions'
-import { findById } from '../utils/array-helpers'
-import { sortFunction } from '../utils/array-helpers'
+import { connect } from 'react-redux';
+import ColorList from './ui/ColorList';
+import ColorDetails from './ui/ColorDetails';
+import AddColorForm from './ui/AddColorForm';
+import { addColor, rateColor, removeColor } from '../actions';
+import { findById } from '../utils/array-helpers';
+import { sortColors } from '../utils/array-helpers';
 
 export const NewColor = connect(
     null,
@@ -14,19 +14,19 @@ export const NewColor = connect(
                 dispatch(addColor(title, color))
             }
         })
-)(AddColorForm)
+)(AddColorForm);
 
 export const Color = connect(
     ({ colors }, { match }) =>
         ({
             ...findById(colors, match.params.id)
         })
-)(ColorDetails)
+)(ColorDetails);
 
 export const Colors = connect(
-    (state) =>
+    ({colors}, {match}) =>
         ({
-           colors: [...state.colors].sort(sortFunction(state.sort))
+           colors: sortColors(colors, match.params.sort)
         }),
     dispatch =>
         ({
@@ -37,4 +37,4 @@ export const Colors = connect(
                 dispatch(rateColor(id, rating))
             }
         })
-)(ColorList)
+)(ColorList);

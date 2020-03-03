@@ -1,14 +1,17 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-import { Provider } from 'react-redux'
+import React from 'react';
 import App from './components/App';
-import storeFactory from './store'
+import storeFactory from './store';
+import { hydrate } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from "react-router-dom";
 
-const store = storeFactory()
+const store = storeFactory(false, window.__INITIAL_STATE__);
 
-ReactDom.render(
-   <Provider store={store}>
-       <App />
-   </Provider>,
+hydrate(
+      <Provider store={store}>
+         <BrowserRouter>
+            <App />
+         </BrowserRouter>
+      </Provider>,
    document.getElementById('root')
 );

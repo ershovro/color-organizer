@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types'
-import Whoops404 from './Whoops404'
-//import '../../stylesheets/ColorDetails.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Whoops404 from './Whoops404';
+//import '../../stylesheets/ColorDetails.scss';
 
 const ColorDetails = ({ title, color, history, location }) =>
     (!color) ?
@@ -13,8 +14,8 @@ const ColorDetails = ({ title, color, history, location }) =>
         </div>
 
 ColorDetails.propTypes = {
-    title: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired
+    title: PropTypes.string,
+    color: PropTypes.string
 }
 
 export default ColorDetails

@@ -1,7 +1,7 @@
 import App from '../components/App';
 import storeFactory from '../store';
 import initialState from '../../data/initialState.json';
-
+import api from './color-api';
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
@@ -11,7 +11,7 @@ import { compose } from 'redux';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
-
+import serialize from 'serialize-javascript';
 
 const staticCSS = fs.readFileSync( path.join(__dirname, '../../dist/assets/bundle.css') );
 const serverStore = storeFactory(true, initialState);
@@ -39,7 +39,7 @@ const buildHTMLPage = ({html, state}) => {console.log('building HTMLPage'); retu
        <body>
            <div id="root">${html}</div>
            <script>
-               window.__INITIAL_STATE__ = ${JSON.stringify(state)}
+               window.__INITIAL_STATE__ = ${ serialize( state, { isJSON: true } ) }
            </script>
            <script src="/bundle.js"></script>
        </body>
@@ -90,4 +90,5 @@ export default express()
    .use(logger)
    .use(fileAssets)
    .use(addStoreToRequestPipeline)
+   .use('/api', api)
    .use(respond);

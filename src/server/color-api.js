@@ -1,41 +1,39 @@
 import { Router } from 'express';
-import C from '../constants';
-import { v4 } from 'uuid';
+import {addColor, rateColor, removeColor} from '../actionCreators.js';
 
 const router = Router();
 
 const dispatchAndRespond = (req, res, action) => {
-    req.store.dispatch(action)
-    res.status(200).json(action)
-}
+   req.store.dispatch(action)
+   res.status(200).json(action)
+};
 
 router.get("/colors", (req, res) =>
-    res.status(200).json(req.store.getState().colors)
-)
+   res.status(200).json(req.store.getState().colors)
+);
 
 router.post("/colors", (req, res) =>
-    dispatchAndRespond(req, res, {
-        type: C.ADD_COLOR,
-        id: v4(),
-        title: req.body.title,
-        color: req.body.color,
-        timestamp: new Date().toString()
-    })
-)
+   dispatchAndRespond(
+      req,
+      res,
+      addColor(req.body.title, req.body.color)
+   )
+);
 
 router.put("/color/:id", (req, res) =>
-    dispatchAndRespond(req, res, {
-        type: C.RATE_COLOR,
-        id: req.params.id,
-        rating: parseInt(req.body.rating)
-    })
-)
+   dispatchAndRespond(
+      req,
+      res,
+      rateColor( req.params.id, parseInt(req.body.rating) )
+   )
+);
 
 router.delete("/color/:id", (req, res) =>
-    dispatchAndRespond(req, res, {
-        type: C.REMOVE_COLOR,
-        id: req.params.id
-    })
-)
+   dispatchAndRespond(
+      req,
+      res,
+      removeColor(req.params.id)
+   )
+);
 
 export default router

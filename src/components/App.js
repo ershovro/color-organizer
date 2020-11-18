@@ -8,9 +8,9 @@ import Whoops404 from "./ui/Whoops404";
 const App = () => (
    <Switch>
       <Route exact path="/:id" component={Color}/>
-      <Route path="/" component={ (routeProps) =>
+      <Route path="/" component={ ({location}) =>
          <div className="app">
-            <Menu {...routeProps} className="app__menu"/>
+            <Menu sort={location.pathname.replace('/sort/', '')} className="app__menu"/>
             <NewColor />
             <Switch>
                <Route exact path="/" component={Colors}/>

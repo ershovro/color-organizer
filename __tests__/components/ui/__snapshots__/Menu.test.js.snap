@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> ui component Rendering ui Renders correctly 1`] = `
+<div
+  className="menu undefined"
+>
+  <NavLink
+    className="menu__link"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+    to="/"
+  >
+    date
+  </NavLink>
+  <NavLink
+    activeStyle={
+      Object {
+        "color": "red",
+      }
+    }
+    className="menu__link"
+    to="/sort/title"
+  >
+    title
+  </NavLink>
+  <NavLink
+    activeStyle={
+      Object {
+        "color": "red",
+      }
+    }
+    className="menu__link"
+    to="/sort/rating"
+  >
+    rating
+  </NavLink>
+</div>
+`;

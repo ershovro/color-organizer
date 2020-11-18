@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Color /> ui component Rendering ui Renders Correctly 1`] = `
+<section
+  className="color"
+>
+  <h1
+    className="color__title"
+    onClick={[Function]}
+  >
+    god color
+  </h1>
+  <button
+    className="color__removeButton"
+    onClick={[Function]}
+  >
+    <FaTrash />
+  </button>
+  <div
+    className="color__timestamp"
+  >
+    <TimeAgo
+      timeStamp={2016-04-11T19:54:19.000Z}
+    />
+  </div>
+  <div
+    className="color__canvas"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#F0F0F0",
+      }
+    }
+  />
+  <div
+    className="color__starRating"
+  >
+    <StarRating
+      onRate={[Function]}
+      starsSelected={5}
+    />
+  </div>
+</section>
+`;

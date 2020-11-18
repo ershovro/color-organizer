@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CAddColorForm /> ui component Rendering ui Renders correctly 1`] = `
+<form
+  className="colorForm"
+  onSubmit={[Function]}
+>
+  <input
+    className="colorForm__textInput"
+    placeholder="color title..."
+    required={true}
+    type="text"
+  />
+  <input
+    className="colorForm__colorInput"
+    type="color"
+  />
+  <button
+    className="colorForm__Button"
+  >
+    Add
+  </button>
+</form>
+`;

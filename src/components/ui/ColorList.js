@@ -10,12 +10,12 @@ const ColorList = ({ colors = [], onRate = f => f, onRemove = f => f }) => (
          ? colors.map( color =>
             <Color
                key={color.id}
-               onRemove={ () => onRemove(color.id)} 
-               onRate={ (rating) => onRate(color.id, rating)}
+               onRemove={ () => onRemove(color.id) }
+               onRate={ (rating) => onRate(color.id, rating) }
                {...color}
             />
          )
-         : <p> No Colors Listed. (Add a Color) </p>
+         : <p>No Colors Listed. (Add a Color)</p>
    }
    </div>
 )

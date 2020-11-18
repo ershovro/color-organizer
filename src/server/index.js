@@ -1,4 +1,4 @@
-import ignoreStyles from 'ignore-styles';
+import 'ignore-styles';
 import app from './app.js';
 
 app.set('port', process.env.PORT || 8080)

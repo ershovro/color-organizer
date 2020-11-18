@@ -6,11 +6,11 @@ const selectedStyle = {
    color: 'red'
 };
 
-const Menu = ({className, match}) => (
+const Menu = ({className, sort}) => (
    <div className={`menu ${className}`}>
       <NavLink
          to="/"
-         style={match.isExact ? selectedStyle : {}}
+         style={sort === '/' ? selectedStyle : {}}
          className="menu__link">
          date
       </NavLink>

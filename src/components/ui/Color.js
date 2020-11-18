@@ -19,13 +19,13 @@ class Color extends React.Component {
                 onClick={() => history.push(`/${id}`)}>
                 {title}
              </h1>
-             <button 
+             <button
                 className="color__removeButton"
                 onClick={onRemove}>
                 <FaTrash/>
              </button>
              <div className="color__timestamp">
-                <TimeAgo timeStamp={timeStamp}/>
+                <TimeAgo timeStamp={new Date(timeStamp)}/>
              </div>
              <div
                 className="color__canvas"
@@ -55,4 +55,4 @@ Color.defaultProps = {
     onRate: f => f
 }
 
-export default withRouter(Color);
+export default Color;//withRouter(Color);
